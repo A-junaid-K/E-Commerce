@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Merrel Admin</title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="/static/images/icon.png" />
+        <!-- Template CSS -->
+        <link href="/static/css/main.css?v=1.1" rel="stylesheet" type="text/css" />
+        <style>
+            /* Add custom CSS styles to control layout */
+            .navbar-aside {
+                width: 280px; /* Adjust the width as needed */
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                background-color: #fff;
+            }
+
+            .content-main {
+                margin-left: 280px; /* Match the width of the aside */
+                padding: 20px; /* Adjust the padding as needed */
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="screen-overlay"></div>
+        
+        <!-- Aside (Navbar) -->
+        <aside class="navbar-aside" id="offcanvas_aside">
+            <div class="aside-top">
+                <a href="/" class="brand-wrap">
+                    <img src="/static/images/logo.png" class="logo" alt="Nest Dashboard" />
+                </a>
+                <div>
+                    <button class="btn btn-icon btn-aside-minimize"><i class="text-muted material-icons md-menu_open"></i></button>
+                </div>
+            </div>
+            <nav>
+                <ul class="menu-aside">
+                    <!-- Menu items here -->
+                    <ul class="menu-aside">
+                        <li class="menu-item">
+                            <a class="menu-link" href="/admin-dashboard">
+                                <i class="icon material-icons md-home"></i>
+                                <span class="text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-link" href="/users-list">
+                                <i class="icon material-icons md-person"></i>
+                                <span class="text">Users</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-link" href="/admin-products-list">
+                                <i class="icon material-icons md-shopping_bag"></i>
+                                <span class="text">Products</span>
+                            </a>
+                        </li>
+                        <li class="menu-item ">
+                            <a class="menu-link" href="/admin-category">
+                                <i class="icon material-icons md-category"></i>
+                                <span class="text">Categories</span>
+                            </a>
+                        </li>
+                        <li class="menu-item ">
+                            <a class="menu-link" href="/admin-brands">
+                                <i class="icon material-icons md-category"></i>
+                                <span class="text">Brands</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-link" href="/admin-order">
+                                <i class="icon material-icons md-shopping_cart"></i>
+                                <span class="text">Orders</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-link" href="/admin-offer">
+                                <i class="icon material-icons md-local_offer "></i>
+                                <span class="text">Offer</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-link" href="/admin-coupon"> <i class="icon material-icons md-stars"></i> <span class="text">Coupen</span> </a>
+                        </li>
+                </ul>
+                <hr />
+                <br />
+                <br />
+            </nav>
+        </aside>
+
+ 
+            <header class="main-header navbar">
+                <div class="col-search">
+                    <form class="searchform">
+                        <!-- <div class="input-group">
+                            <input list="search_terms" type="text" class="form-control" placeholder="Search term" />
+                            <button class="btn btn-light bg" type="button"><i class="material-icons md-search"></i></button>
+                        </div> -->
+                        <datalist id="search_terms">
+                            <option value="Products"></option>
+                            <option value="New orders"></option>
+                            <option value="Apple iphone"></option>
+                            <option value="Ahmed Hassan"></option>
+                        </datalist>
+                    </form>
+                </div>
+                <div class="col-nav">
+                    <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"><i class="material-icons md-apps"></i></button>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link btn-icon" href="#">
+                                <i class="material-icons md-notifications animation-shake"></i>
+                                <span class="badge rounded-pill">3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount" aria-expanded="false"> <img class="img-xs rounded-circle" src="/static/images/people/avatar-2.png" alt="User" /></a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
+                                <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit Profile</a>
+                                <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account Settings</a>
+                                <a class="dropdown-item" href="#"><i class="material-icons md-account_balance_wallet"></i>Wallet</a>
+                                <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a>
+                                <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help center</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#"><i class="material-icons md-exit_to_app"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+                <!-- Main Content Section -->
+                <section class="content-main">
+                    <div class="content-header">
+                        <div>
+                            <h2 class="content-title card-title">Coupon</h2>
+                            <p>Add, delete a coupon</p>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Search Categories" class="form-control bg-white" id="searchInput" />
+                        </div>
+                    </div>
+        
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <!-- Add Category Form -->
+                                    <form action="/admin-addcoupon" method="post">
+                                        <div class="mb-4">
+                                            <label for="category_name" class="form-label">Coupon Code</label>
+                                            <input type="text" placeholder="coupon code" class="form-control" id="category_name" name="couponcode" required />
+                                        </div>
+
+                                        <div class="col-md-4 col-6">
+                                            <label class="mb-2">Coupon Type</label>
+                                            <select class="form-select border border-secondary" style="height: 35px;margin-bottom: 20px" name="type" required >
+                                              <option id="selected" selected disabled value="">select</option>
+                                              <option>Percentage</option>
+                                              <option>Fixed price</option>
+                                            </select>
+                                          </div>
+
+                                          <div class="form-group mb-4">
+                                            <label class="form-label" for="expiry-date">Expiry Date</label>
+                                            <input type="date" class="form-control" id="expiry_date" name="expiryDate" required="" min="2023-11-25">
+                                          </div>
+
+                                          <div class="form-group mb-4">
+                                            <label for="percentage" class="form-label">Discount</label>
+                                            <div class="input-group">
+                                              <input type="number" class="form-control" id="number" name="discount" placeholder="Enter Discount value" required="">
+                                              <div class="input-group-append">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        
+                                       
+
+                                        <button type="submit" class="btn btn-primary">Create Coupon</button>
+                                        <!-- Add more form elements as needed -->
+                                    </form>
+                                </div>
+        
+                                <div class="col-md-9">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 5%">ID</th>
+                                                    <th style="width: 10%">Coupon Code</th>
+                                                    <th>Discount</th>
+                                                    <th>Action</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+        
+                                            <tbody>
+                                                <!-- Populate the table rows with category data -->
+                                                {{range .}}
+                                                <tr>
+                                                    
+                                                <td>{{.CouponId}}</td>
+                                                <td><b>{{.Coupon_Code}}</b></td>
+                                                <td>{{if eq .Type "Percentage"}}{{.Value}}%{{else if eq .Type "Fixed price"}}₹{{.Value}}{{end}}</td>
+
+                                                        <!-- Action buttons -->
+                                                        
+                                                        <td>
+                                                            {{if not .Cancel}}
+                                                                <a href="/admin/cancel-coupon?coupon_id={{.CouponId}}">
+                                                                    <button class="btn btn-sm btn-outline-warning rounded font-sm" style="color:rgb(179, 116, 0)">
+                                                                        Cancel Coupon
+                                                                    </button>
+                                                                </a>
+                                                            {{else}}
+                                                                <a href="/admin/approve-coupon?coupon_id={{.CouponId}}">
+                                                                    <button class="btn btn-sm btn-outline-success rounded font-sm" style="color:green">
+                                                                        Approve Coupon
+                                                                    </button>
+                                                                </a>
+                                                            {{end}}
+                                                        </td>
+                                                        
+                                                    <td  >
+                                                        <a href="/admin/remove-coupon?coupon_id={{.CouponId}}" >
+                                                        <button class="btn btn-sm btn-outline-danger rounded font-sm" >
+                                                            Remove Coupon
+                                                        </button></a>
+                                                    </td>
+                                                </tr>
+                                                {{end}}
+                                            </tbody>
+                                        </table>
+                                        {{if .error}}
+                                        <p style="color: crimson;" >Error: {{.error}}</p>
+                                        {{end}}
+                                    </div>
+                                </div>
+                                <!-- .col// -->
+                            </div>
+                            <!-- .row // -->
+                        </div>
+                        <!-- card body .// -->
+                    </div>
+                    <!-- card .// -->
+                </section>
+                <!-- Main Content Section ends here -->
+            </body>
+        </html>
+        

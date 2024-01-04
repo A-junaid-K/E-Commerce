@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Merrel Admin</title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="/static/images/icon.png" />
+        <!-- Template CSS -->
+                    <!-- Add Bootstrap CSS -->
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+                    <!-- Font Awesome -->
+                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+                    <!-- Google Fonts Roboto -->
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+        <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+        <link href="/static/css/main.css?v=1.1" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div class="screen-overlay"></div>
+        <aside class="navbar-aside" id="offcanvas_aside">
+            <div class="aside-top">
+                <a href="index.html" class="brand-wrap">
+                    <img src="/static/images/logo.png" class="logo" alt="Nest Dashboard" />
+                </a>
+                <div>
+                    <button class="btn btn-icon btn-aside-minimize"><i class="text-muted material-icons md-menu_open"></i></button>
+                </div>
+            </div>
+            <nav>
+                <ul class="menu-aside">
+                    <li class="menu-item">
+                        <a class="menu-link" href="/admin-dashboard">
+                            <i class="icon material-icons md-home"></i>
+                            <span class="text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="/users-list">
+                            <i class="icon material-icons md-person"></i>
+                            <span class="text">Users</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="/admin-products-list">
+                            <i class="icon material-icons md-shopping_bag"></i>
+                            <span class="text">Products</span>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a class="menu-link" href="/admin-category">
+                            <i class="icon material-icons md-category"></i>
+                            <span class="text">Categories</span>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a class="menu-link" href="/admin-brands">
+                            <i class="icon material-icons md-category"></i>
+                            <span class="text">Brands</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="/admin-order">
+                            <i class="icon material-icons md-shopping_cart"></i>
+                            <span class="text">Orders</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="/admin-offer">
+                            <i class="icon material-icons md-local_offer "></i>
+                            <span class="text">Offer</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="/admin-coupon"> <i class="icon material-icons md-stars"></i> <span class="text">Coupen</span> </a>
+                    </li>
+                </ul>
+                <hr />
+                <br />
+                <br />
+            </nav>
+        </aside>
+        <main class="main-wrap">
+            <header class="main-header navbar">
+                <div class="col-search">
+                    <form class="searchform">
+                        <div class="input-group">
+                            <input list="search_terms" type="text" class="form-control" placeholder="Search term" />
+                            <button class="btn btn-light bg" type="button"><i class="material-icons md-search"></i></button>
+                        </div>
+                        <datalist id="search_terms">
+                            <option value="Products"></option>
+                            <option value="New orders"></option>
+                            <option value="Apple iphone"></option>
+                            <option value="Ahmed Hassan"></option>
+                        </datalist>
+                    </form>
+                </div>
+                <div class="col-nav">
+                    <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"><i class="material-icons md-apps"></i></button>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link btn-icon" href="#">
+                                <i class="material-icons md-notifications animation-shake"></i>
+                                <span class="badge rounded-pill">3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount" aria-expanded="false"> <img class="img-xs rounded-circle" src="/static/images/people/avatar-2.png" alt="User" /></a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
+                                <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit Profile</a>
+                                <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account Settings</a>
+                                <a class="dropdown-item" href="#"><i class="material-icons md-account_balance_wallet"></i>Wallet</a>
+                                <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a>
+                                <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help center</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#"><i class="material-icons md-exit_to_app"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <section class="content-main">
+                <table id="myTable" class="table table-hover dataTable">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th scope="col">User ID</th>
+                            <th scope="col">Payment ID</th>
+                            <th scope="col">Payment Method</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Date &nbsp; & &nbsp; Time </th> 
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{range .}}
+                            <tr>
+                            <form action="/admin/order-status/{{.Order_ID}}" method="post" >
+                                <td >
+                                    {{.Order_ID}}
+                                    
+                                </td>
+                                <td><b>
+                                        {{.User_ID}}
+                                    </b></td>
+                                    <td>{{.Payment_ID}}</td>
+                                <td>
+                                    {{.Payment_Type}}
+                                </td>
+                                <td>
+                                    {{.Total_Price}}
+                                </td>
+                                <!-- <td><span class="badge rounded-pill alert-warning">
+                                delivered
+                            </span></td> -->
+                            
+                            <td>{{.Date.Format "2006-01-02"}} &nbsp;  | &nbsp;	&#9200; {{.Date.Format "15:04:05"}}</td>
+
+                                <td>
+                                    <!-- <div class="dropdown">
+                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-light rounded btn-sm font-sm"> <i class="material-icons md-more_horiz"></i> </a> -->
+
+
+                                
+                                    <select class="form-select statusSelector"  name="status" >
+                                        <option value="canceled">Canceled
+                                        </option>
+                                        <option value="placed">Placed</option>
+                                        <option value="pending">Pending
+                                        </option>
+                                        <option value="{{.Status}}" selected="">{{.Status}}
+                                        </option>
+                                        <option value="delivered">delivered
+                                        </option>
+                                        <option value="returned">Returned
+                                        </option>
+                                        <option value="waitingForApproval">
+                                                req:Canceled
+                                        </option>
+                                    </select>
+                                </td>
+                                <td><button class="btn btn-md rounded font-sm show-items" >change</button></td>
+                                </form> 
+                                {{end}}
+                            
+                                <!-- </div> -->
+                                <!-- dropdown //end -->
+                    
+            </section>
+            <!-- content-main end// -->
+            <footer class="main-footer font-xs">
+                <div class="row pb-30 pt-15">
+                    <div class="col-sm-6">
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                        &copy; Nest - HTML Ecommerce Template .
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-sm-end">All rights reserved</div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+        <script src="/static/js/vendors/jquery-3.6.0.min.js"></script>
+        <script src="/static/js/vendors/bootstrap.bundle.min.js"></script>
+        <script src="/static/js/vendors/select2.min.js"></script>
+        <script src="/static/js/vendors/perfect-scrollbar.js"></script>
+        <script src="/static/js/vendors/jquery.fullscreen.min.js"></script>
+        <!-- Main Script -->
+        <script src="/static/js/main.js?v=1.1" type="text/javascript"></script>
+    </body>
+</html>

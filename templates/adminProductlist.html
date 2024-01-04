@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Merrel Admin</title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="/static/images/icon.png" />
+        <!-- Template CSS -->
+        <link href="/static/css/main.css?v=1.1" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div class="screen-overlay"></div>
+        <aside class="navbar-aside" id="offcanvas_aside">
+            <div class="aside-top">
+                <a href="index.html" class="brand-wrap">
+                    <img src="/static/images/logo.png" class="logo" alt="Nest Dashboard" />
+                </a>
+                <div>
+                    <button class="btn btn-icon btn-aside-minimize"><i class="text-muted material-icons md-menu_open"></i></button>
+                </div>
+            </div>
+            <nav>
+                <ul class="menu-aside">
+                    <li class="menu-item">
+                        <a class="menu-link" href="/admin-dashboard">
+                            <i class="icon material-icons md-home"></i>
+                            <span class="text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="/users-list">
+                            <i class="icon material-icons md-person"></i>
+                            <span class="text">Users</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="/admin-products-list">
+                            <i class="icon material-icons md-shopping_bag"></i>
+                            <span class="text">Products</span>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a class="menu-link" href="/admin-category">
+                            <i class="icon material-icons md-category"></i>
+                            <span class="text">Categories</span>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a class="menu-link" href="/admin-brands">
+                            <i class="icon material-icons md-category"></i>
+                            <span class="text">Brands</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="/admin-order">
+                            <i class="icon material-icons md-shopping_cart"></i>
+                            <span class="text">Orders</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="/admin-offer">
+                            <i class="icon material-icons md-local_offer "></i>
+                            <span class="text">Offer</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="/admin-coupon"> <i class="icon material-icons md-stars"></i> <span class="text">Coupen</span> </a>
+                    </li>
+                </ul>
+                <hr />
+                <br />
+                <br />
+            </nav>
+        </aside>
+        <main class="main-wrap">
+            <header class="main-header navbar">
+                <!-- <div class="col-search">
+                    <form class="searchform">
+                        <div class="input-group">
+                            <input list="search_terms" type="text" class="form-control" placeholder="Search term" />
+                            <button class="btn btn-light bg" type="button"><i class="material-icons md-search"></i></button>
+                        </div>
+                        <datalist id="search_terms">
+                            <option value="Products"></option>
+                            <option value="New orders"></option>
+                            <option value="Apple iphone"></option>
+                            <option value="Ahmed Hassan"></option>
+                        </datalist>
+                    </form>
+                </div> -->
+            </header>
+            <section class="content-main">
+                <div class="content-header">
+                    <h2 class="content-title">Products list</h2>
+                    <div>
+                        <a href="/add-product" class="btn btn-primary"><i class="material-icons md-plus"></i> Add product</a>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <header class="card-header">
+                        <div class="row gx-3">
+                            <div class="col-lg-4 col-md-6 me-auto">
+                                <input type="text" placeholder="Search..." class="form-control" />
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-6">
+                                <select class="form-select">
+                                    <option>Status</option>
+                                    <option>Active</option>
+                                    <option>Disabled</option>
+                                    <option>Show all</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-6">
+                                <select class="form-select">
+                                    <option>Show 20</option>
+                                    <option>Show 30</option>
+                                    <option>Show 40</option>
+                                </select>
+                            </div>
+                        </div>
+                    </header>
+                    <!-- card-header end// -->
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Brand</th>
+                                        <th>Category</th>
+                                        <th>Description</th>
+                                        <th>Stock</th>
+                                        <th>Offer</th>
+                                        <th class="text-end" >Action</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{range .Products}}
+                                    <tr>
+                                        <td width="20%">
+                                            <a href="#" class="itemside">
+                                                <!-- <div class="left">
+                                                    <img src="static/images/people/avatar-1.png" class="img-sm img-avatar" alt="Userpic" />
+                                                </div> -->
+                                                <div class="info pl-3">
+                                                    <h6 class="mb-0 title"><img style="max-width: 130px;" src="/static/images/{{.Image}}" class="w-100" /></h6>
+                                                    <small style="margin: 30px;" >{{.Name}}</small>
+                                                
+                                                </div>
+                                            </a>
+                                        </td>
+                                        <td>₹{{.Price}}</td>
+                                        <td style="font-weight: bolder;font-size: 17px;">{{.Brand_Name}}</td>
+                                        <td>{{.Category_Name}}</td>
+                                        <td>{{.Description}}</td>
+                                        {{if ne .Stock 0}}
+                                        <td><span class="badge rounded-pill alert-success">{{.Stock}}</span></td>
+                                        {{else}}
+                                        <td><span class="badge rounded-pill alert-danger">Out of Stock</span></td>
+                                        {{end}}
+                                        <td>
+                                            {{if .Offer_Name}}
+                                                <span class="text-success" >{{.Offer_Name}}|{{.Percentage}}% off</span>
+                                            {{else}}
+                                                No offers
+                                            {{end}}
+                                            
+                                        </td>
+                                        <td>
+                                            <!-- <button class="btn btn-sm btn-outline-warning rounded font-sm" disabled>
+                                                Remove offer
+                                            </button> -->
+                                    </td>
+                                        <td class="text">
+                                            <a href="/edit-product/{{.ID}}"class="btn btn-sm btn-brand rounded font-sm mt-15" >Edit</a>
+                                        </td>
+                                        <td>
+                                            <a href="/delete-product/{{.ID}}" class="btn btn-brand btn-brand rounded font-sm mt-15" >Remove</a>
+                                        </td>
+                                    </tr>
+                                    {{end}}
+                                    
+                                    {{if .error}}
+                                    <p style="color: crimson;" >Error: {{.error}}</p>
+                                     {{end}}
+                                    
+                                </tbody>
+                            </table>
+                            <!-- table-responsive.// -->
+                        </div>
+                    </div>
+                    <!-- card-body end// -->
+                </div>
+                <!-- card end// -->
+            </section>
+            <!-- content-main end// -->
+            <footer class="main-footer font-xs">
+                <div class="row pb-30 pt-15">
+                    <div class="col-sm-6">
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                        &copy; Nest - HTML Ecommerce Template .
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-sm-end">All rights reserved</div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+        <script src="/static/js/vendors/jquery-3.6.0.min.js"></script>
+        <script src="/static/js/vendors/bootstrap.bundle.min.js"></script>
+        <script src="/static/js/vendors/select2.min.js"></script>
+        <script src="/static/js/vendors/perfect-scrollbar.js"></script>
+        <script src="/static/js/vendors/jquery.fullscreen.min.js"></script>
+        <!-- Main Script -->
+        <script src="/static/js/main.js?v=1.1" type="text/javascript"></script>
+    </body>
+</html>
